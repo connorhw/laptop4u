@@ -1,0 +1,27 @@
+header {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.criteria {
+    border: 1px solid black;
+    margin: 10px;
+    text-align: center;
+    height: 305px;
+}
+
+.form {
+    border: 1px solid black;
+    margin: 10px;
+    text-align: center;
+    height: 385px;
+}
+
+footer {
+    border: 1px solid black;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
