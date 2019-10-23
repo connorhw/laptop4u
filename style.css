@@ -1,20 +1,26 @@
 header {
     border: 1px solid black;
     text-align: center;
+    background: grey;
+    color: white;
 }
 
-.criteria {
+.criteria, .laptop-choice {
     border: 1px solid black;
     margin: 10px;
     text-align: center;
     height: 305px;
+    background: grey;
+    color: white;
 }
 
-.form {
+.form, .your-laptop {
     border: 1px solid black;
     margin: 10px;
     text-align: center;
     height: 385px;
+    background: grey;
+    color: white;
 }
 
 footer {
@@ -24,4 +30,32 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
+    background: grey;
+    color: white;
+}
+
+.results-list {
+    border: 1px solid black;
+    text-align: center;
+    margin: 10px;
+    height: 385px;
+    background: grey;
+    color: white;
+}
+
+.compare-list {
+    border: 1px solid black;
+    text-align: center;
+    margin-top: 10px;
+    background: grey;
+    color: white;
+}
+
+#newegg, #bestbuy, #amazon {
+    border: 1px solid black;
+    text-align: center;
+    margin: 5px;
+    height: 80px;
+    background: grey;
+    color: white;
 }
