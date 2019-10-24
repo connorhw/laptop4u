@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>laptop4u</h1>
+    </header>
+    <div class="main">
+        <div class="form">
+            <h2>Tell me what you're looking for:</h2>
+            <section class="criteria">
+                <select id="dropdowns">
+                    <div id="os" name="os">
+                        <option value="windows">Windows</option>
+                        <option value="mac os">Mac OS</option>
+                        <option value="linux">Linux</option>
+                    </div>
+                </select></br></br>
+                    <div id="priceRange">
+                        <label for="price">Price Range</label></br>
+                        <input type="range" id="price" name="price" min="500" max="5000" step="500" list="steplist">
+                        <datalist id="steplist">
+                            <option value="500" label="$500">500</option>
+                            <option>1000</option>
+                            <option>1500</option>
+                            <option>2000</option>
+                            <option>2500</option>
+                            <option>3000</option>
+                            <option>3500</option>
+                            <option>4000</option>
+                            <option>4500</option>
+                            <option value="5000" label="$5000">5000</option>
+                        </datalist>
+                    </div>  
+                
+            </section>
+        </div>
+    </div>
+</body>
+<footer>
+    <h2>footer</h2>
+</footer>
+</html>
