@@ -57,3 +57,8 @@ footer {
     background: grey;
     color: white;
 }
+
+/*====KEEPING-UNDER=======================================================*/
+.hidden {
+    display: none;
+}
