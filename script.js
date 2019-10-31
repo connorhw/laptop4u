@@ -3,15 +3,15 @@
 const apiKey = '1TGJYsFjOVTW6vG1Qsx2e2i8';
 const baseURL = 'https://api.bestbuy.com/v1/products((categoryPath.id=abcat0502000))';
 
-function getBBLaptops(manuf) {
+function getBBLaptops(manuf, maxPrice) {
     /*
     const params = {
         manufacturer: manuf
     };
     */
-    const url = 'https://api.bestbuy.com/v1/products(manufacturer='+manuf+'&(categoryPath.id=abcat0502000)&condition=new)?apiKey=1TGJYsFjOVTW6vG1Qsx2e2i8&'+
+    const url = 'https://api.bestbuy.com/v1/products(manufacturer='+manuf+'&(categoryPath.id=abcat0502000)&condition=new&regularPrice<='+maxPrice+')?apiKey=1TGJYsFjOVTW6vG1Qsx2e2i8&'+
     'sort=description.asc&show=categoryPath.id,categoryPath.name,description,details.name,features.feature,manufacturer,name,regularPrice,thumbnailImage&'+
-    'pageSize=26&format=json';
+    'pageSize=25&format=json';
     fetch(url)
         .then(response => {
             if (response.ok) {
@@ -21,10 +21,6 @@ function getBBLaptops(manuf) {
             throw new Error(response.statusText);
         })
         .then(responseJson => displayResults(responseJson))
-}
-
-function priceRange () {
-    
 }
 
 function displayResults(responseJson) {
@@ -46,8 +42,8 @@ function watchForm() {
     $('.form').submit(function(event) {
         event.preventDefault();
        const manuf = $('#js-manuf').val();
-
-        getBBLaptops(manuf);
+       const maxPrice =$('#js-price').val();
+        getBBLaptops(manuf, maxPrice);
     });
     
     console.log('On the lookout!');
