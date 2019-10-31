@@ -62,3 +62,8 @@ footer {
 .hidden {
     display: none;
 }
+
+li {
+    list-style: none;
+    margin-right: 15px;
+}

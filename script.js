@@ -9,7 +9,9 @@ function getBBLaptops(manuf) {
         manufacturer: manuf
     };
     */
-    const url = 'https://api.bestbuy.com/v1/products(manufacturer='+manuf+'&(categoryPath.id=abcat0502000))?apiKey=1TGJYsFjOVTW6vG1Qsx2e2i8&sort=description.asc&show=categoryPath.id,categoryPath.name,description,details.name,features.feature,manufacturer,name,regularPrice,thumbnailImage&format=json';
+    const url = 'https://api.bestbuy.com/v1/products(manufacturer='+manuf+'&(categoryPath.id=abcat0502000)&condition=new)?apiKey=1TGJYsFjOVTW6vG1Qsx2e2i8&'+
+    'sort=description.asc&show=categoryPath.id,categoryPath.name,description,details.name,features.feature,manufacturer,name,regularPrice,thumbnailImage&'+
+    'pageSize=26&format=json';
     fetch(url)
         .then(response => {
             if (response.ok) {
@@ -21,14 +23,18 @@ function getBBLaptops(manuf) {
         .then(responseJson => displayResults(responseJson))
 }
 
+function priceRange () {
+    
+}
+
 function displayResults(responseJson) {
     console.log(responseJson);
     $('.bb-laptops-list').empty();
     for (let i=0; i<responseJson.products.length; i++) {
         $('.bb-laptops-list').append(
             `<li>
-            <p>${responseJson.products[i].name}</p>
-            <div>${responseJson.products[i].manufacturer}</div>
+            <p>${responseJson.products[i].name}: $${responseJson.products[i].regularPrice}</p>
+            <img src="${responseJson.products[i].thumbnailImage}">
             </li>`
         )
     };
