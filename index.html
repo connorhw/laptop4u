@@ -23,29 +23,17 @@
                 <label for="js-price">Max Price</label></br>
                 <input type="number" id="js-price"></br>
                 <button type="submit" >Search</button></br>
-                <!--
-                    <div id="priceRange">
-                        <label for="price">Price Range</label></br>
-                        <input type="range" id="price" name="price" min="500" max="5000" step="500" list="steplist">
-                        <datalist id="steplist">
-                            <option value="500" label="$500">500</option>
-                            <option>1000</option>
-                            <option>1500</option>
-                            <option>2000</option>
-                            <option>2500</option>
-                            <option>3000</option>
-                            <option>3500</option>
-                            <option>4000</option>
-                            <option>4500</option>
-                            <option value="5000" label="$5000">5000</option>
-                        </datalist>
-                    </div>  
-                -->
             </section>
         </form>
         <section class="results hidden">
-                <h3>Laptops:</h3>
-                <ul class="bb-laptops-list"></ul>
+            <h3>Laptops:</h3>
+            <ul class="bb-laptops-list"></ul>
+            <button type="submit">Test next</button>
+            <div id="buffer"></div>
+        </section>
+        <section class="selected hidden2">
+            <h3>Here's what you chose:</h3>
+            <ul class="bb-selected-laptop"></ul>
         </section>
     </div>
 </body>

@@ -30,11 +30,23 @@ function displayResults(responseJson) {
         $('.bb-laptops-list').append(
             `<li>
             <p>${responseJson.products[i].name}: $${responseJson.products[i].regularPrice}</p>
-            <img src="${responseJson.products[i].thumbnailImage}">
+            <img src="${responseJson.products[i].thumbnailImage}"></br>
             </li>`
         )
     };
     $('.results').removeClass('hidden');
+}
+
+function displaySelectedLaptopListener() {
+    console.log('selected laptop is working..');
+    $('.selected').submit(function(event) {
+        event.preventDefault();
+        console.log('final....');
+
+    });
+    $('.results').addClass('hidden');
+    $('.selected').removeClass('hidden2');
+
 }
 
 function watchForm() {
@@ -47,10 +59,10 @@ function watchForm() {
     });
     
     console.log('On the lookout!');
-    
 }
 
 $(function() {
     console.log('App loaded successfully!');
     watchForm();
+    displaySelectedLaptopListener();
 });

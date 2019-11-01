@@ -18,7 +18,6 @@ header {
     margin: 10px;
     text-align: center;
     height: 385px;
-
 }
 
 footer {
@@ -30,6 +29,7 @@ footer {
     width: 100%;
     background: grey;
     color: white;
+    margin-top: 25px;
 }
 
 .results-list {
@@ -63,7 +63,16 @@ footer {
     display: none;
 }
 
+.hidden2 {
+    display: none;
+}
+
 li {
     list-style: none;
     margin-right: 15px;
 }
+
+#buffer {
+    height: 75px;
+}
+
