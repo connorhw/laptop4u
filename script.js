@@ -15,7 +15,7 @@ function getBBLaptops(manuf, maxPrice) {
     fetch(url)
         .then(response => {
             if (response.ok) {
-                console.log('we gucci...response ok');
+                console.log('response is good');
                 return response.json();
             }
             throw new Error(response.statusText);
@@ -30,6 +30,7 @@ function displayResults(responseJson) {
         $('.bb-laptops-list').append(
             `<li>
             <p>${responseJson.products[i].name}: $${responseJson.products[i].regularPrice}</p>
+            <a href="index2.html">Select this laptop</a></br>
             <img src="${responseJson.products[i].thumbnailImage}"></br>
             </li>`
         )
@@ -39,15 +40,14 @@ function displayResults(responseJson) {
 
 function displaySelectedLaptopListener() {
     console.log('selected laptop is working..');
-    $('.selected').submit(function(event) {
+    $('.results').submit(function(event) {
         event.preventDefault();
         console.log('final....');
-
     });
+    $('.selected').removeClass('hidden');
     $('.results').addClass('hidden');
-    $('.selected').removeClass('hidden2');
-
 }
+
 
 function watchForm() {
     
@@ -64,5 +64,5 @@ function watchForm() {
 $(function() {
     console.log('App loaded successfully!');
     watchForm();
-    displaySelectedLaptopListener();
+    //displaySelectedLaptopListener();
 });
