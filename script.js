@@ -40,12 +40,16 @@ function displayResults(responseJson) {
 
 function displaySelectedLaptopListener() {
     console.log('selected laptop is working..');
-    $('.results').submit(function(event) {
-        event.preventDefault();
-        console.log('final....');
-    });
-    $('.selected').removeClass('hidden');
     $('.results').addClass('hidden');
+    $('.selected').removeClass('hidden');
+    /*
+    $('.button').onClick(function(event) {
+        //event.preventDefault();
+        console.log('final....');
+        $('.selected').removeClass('hidden');
+        $('.results').addClass('hidden');
+    });
+    */
 }
 
 
@@ -64,5 +68,5 @@ function watchForm() {
 $(function() {
     console.log('App loaded successfully!');
     watchForm();
-    //displaySelectedLaptopListener();
+    displaySelectedLaptopListener();
 });
