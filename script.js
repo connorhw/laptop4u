@@ -38,6 +38,14 @@ function displayResults(responseJson) {
     $('.results').removeClass('hidden');
 }
 
+function generateSelectedLaptopPage() {
+    $('.bb-selected-laptop').append(
+        `<li>
+        
+        </li>`
+    )
+}
+
 function displaySelectedLaptopListener() {
     console.log('selected laptop is working..');
     $('.results').addClass('hidden');
@@ -68,5 +76,5 @@ function watchForm() {
 $(function() {
     console.log('App loaded successfully!');
     watchForm();
-    displaySelectedLaptopListener();
+    //displaySelectedLaptopListener();
 });
