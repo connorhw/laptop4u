@@ -47,25 +47,21 @@ function displaySelectedLaptopListener() {
         console.log(index);
         index = +index; //converts string to number
         console.log(index);
+        getSelectedLaptopInfo(index);
     })
 
-    
-    /*
-    $('.bb-selected-laptop').append(`<li>
-        <p>${laptopData.products[4].name}</p>
-    </li>`)
-    */
 }
 
-/*
-function getSelectedLaptopInfo(){
-        console.log($(this));
-    let index = $(this).attr('node');
-        console.log(index);
-        index = +index; //converts string to number
-        console.log(index);
+function getSelectedLaptopInfo(index){
+    console.log(index);
+    $('.bb-selected-laptop').empty();
+    $(".bb-selected-laptop").append(
+        `<li>
+            ${laptopData.products[index].name}
+        </li>`
+    )
 }
-*/
+
 function watchForm() {
     
     $('.form').submit(function(event) {
