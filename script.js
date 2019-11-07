@@ -23,48 +23,45 @@ function getBBLaptops(manuf, maxPrice) {
 }
 
 function displayResults(responseJson) {
-    console.log('hi');
     console.log(laptopData);
     $('.bb-laptops-list').empty();
     for (let i=0; i<responseJson.products.length; i++) {
         $('.bb-laptops-list').append(
             `<li class="laptop-li" node=${i}>
             <p>${responseJson.products[i].name}: $${responseJson.products[i].regularPrice}</p>
-            <button onclick="displaySelectedLaptopListener()">test next</button>
+            <button type="button" id="select-button">test next</button>
             <img src="${responseJson.products[i].thumbnailImage}"></br>
             </li>`
         )
     };
     $('.results').removeClass('hidden');
+    displaySelectedLaptopListener();
 }
 
-/*
-function generateSelectedLaptopPage() {
-    $('.bb-selected-laptop').append(
-        `<li>
-            
-        </li>`
-    )
-}
-*/
 function displaySelectedLaptopListener() {
-    console.log('selected laptop is working..');
-    $('.results').addClass('hidden');
-    $('.selected').removeClass('hidden');
-    console.log(laptopData);
-    $('.bb-selected-laptop').append(
-
-    )
-    /*
-    $('.button').onClick(function(event) {
-        //event.preventDefault();
-        console.log('final....');
-        $('.selected').removeClass('hidden');
+    //console.log(laptopData);
+    $(".laptop-li").click(function() {
         $('.results').addClass('hidden');
-    });
+        $('.selected').removeClass('hidden');
+        getSelectedLaptopInfo();
+        //let index = $(this).prop("node");
+        //index = +index;
+        //console.log(index);
+    })
+
+    
+    /*
+    $('.bb-selected-laptop').append(`<li>
+        <p>${laptopData.products[4].name}</p>
+    </li>`)
     */
 }
 
+function getSelectedLaptopInfo(){
+    let index = $(this).prop("node");
+        index = +index; //converts string to number
+        console.log(index);
+}
 
 function watchForm() {
     
