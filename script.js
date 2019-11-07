@@ -43,10 +43,10 @@ function displaySelectedLaptopListener() {
     $(".laptop-li").click(function() {
         $('.results').addClass('hidden');
         $('.selected').removeClass('hidden');
-        getSelectedLaptopInfo();
-        //let index = $(this).prop("node");
-        //index = +index;
-        //console.log(index);
+        let index = $(this).attr('node');
+        console.log(index);
+        index = +index; //converts string to number
+        console.log(index);
     })
 
     
@@ -57,12 +57,15 @@ function displaySelectedLaptopListener() {
     */
 }
 
+/*
 function getSelectedLaptopInfo(){
-    let index = $(this).prop("node");
+        console.log($(this));
+    let index = $(this).attr('node');
+        console.log(index);
         index = +index; //converts string to number
         console.log(index);
 }
-
+*/
 function watchForm() {
     
     $('.form').submit(function(event) {
