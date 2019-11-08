@@ -76,7 +76,7 @@ li {
 }
 
 li:nth-child(odd) {
-    background:silver;
+    background:beige;
 }
 
 #buffer {
@@ -84,9 +84,19 @@ li:nth-child(odd) {
 }
 
 @media screen and (max-width: 400px) {
-    *{
+    .main {
         font-size: 13px;
     }
+    
+    #full-laptop-image {
+        height: 90%;
+        width: 90%;
+    }
+
+    .selected {
+        margin-bottom: 80px;
+    }
+
 }
 
 

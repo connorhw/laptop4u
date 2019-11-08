@@ -5,8 +5,8 @@ const baseURL = 'https://api.bestbuy.com/v1/products((categoryPath.id=abcat05020
 let laptopData;
 
 function getBBLaptops(manuf, maxPrice) {
-    const url = 'https://api.bestbuy.com/v1/products(manufacturer='+manuf+'&(categoryPath.id=abcat0502000)&condition=new&regularPrice<='+maxPrice+')?apiKey=1TGJYsFjOVTW6vG1Qsx2e2i8&'+
-    'sort=description.asc&show=categoryPath.id,categoryPath.name,description,details.name,features.feature,manufacturer,name,regularPrice,thumbnailImage&'+
+    const url = 'https://api.bestbuy.com/v1/products(manufacturer='+manuf+'&(categoryPath.id=abcat0502000)&condition=new&regularPrice<='+maxPrice+')'+
+    '?apiKey=1TGJYsFjOVTW6vG1Qsx2e2i8&sort=description.asc&show=categoryPath.id,categoryPath.name,description,details.name,features.feature,manufacturer,name,regularPrice,thumbnailImage,image&'+
     'pageSize=25&format=json';
     fetch(url)
         .then(response => {
@@ -52,6 +52,9 @@ function displaySelectedLaptopListener() {
 function getSelectedLaptopInfo(index){
     $('.bb-selected-laptop').empty();
     console.log(laptopData)
+    $(".bb-selected-laptop").append(
+    `<img id ="full-laptop-image" src="${laptopData.products[index].image}" alt="Full image of computer">`
+    )
     for (let i=0; i<laptopData.products[index].features.length; i++) {
         $(".bb-selected-laptop").append(
             `<li>
