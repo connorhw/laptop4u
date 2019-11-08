@@ -39,27 +39,26 @@ function displayResults(responseJson) {
 }
 
 function displaySelectedLaptopListener() {
-    //console.log(laptopData);
     $(".laptop-li").click(function() {
         $('.results').addClass('hidden');
         $('.selected').removeClass('hidden');
         let index = $(this).attr('node');
-        console.log(index);
         index = +index; //converts string to number
-        console.log(index);
         getSelectedLaptopInfo(index);
     })
 
 }
 
 function getSelectedLaptopInfo(index){
-    console.log(index);
     $('.bb-selected-laptop').empty();
-    $(".bb-selected-laptop").append(
-        `<li>
-            ${laptopData.products[index].name}
-        </li>`
-    )
+    console.log(laptopData)
+    for (let i=0; i<laptopData.products[index].features.length; i++) {
+        $(".bb-selected-laptop").append(
+            `<li>
+                ${laptopData.products[index].features[i].feature}
+            </li>`
+        )
+    }
 }
 
 function watchForm() {
