@@ -59,6 +59,11 @@ footer {
 }
 
 /*====KEEPING-UNDER=======================================================*/
+
+* {
+    font-family: sans-serif;
+}
+
 .hidden {
     display: none;
 }
@@ -66,9 +71,22 @@ footer {
 li {
     list-style: none;
     margin-right: 15px;
+    background: white;
+
+}
+
+li:nth-child(odd) {
+    background:silver;
 }
 
 #buffer {
     height: 75px;
 }
+
+@media screen and (max-width: 400px) {
+    *{
+        font-size: 13px;
+    }
+}
+
 
