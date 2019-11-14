@@ -1,1 +1,5 @@
-11/8/19 - css - add light grey backfround to every-other feature in selected-laptop section.
+11/8/19 - css - add light grey backfround to every-other feature in selected-laptop section
+
+js - add CPU search criterion
+
+11/13 - Trying to implement search criterian of a laptop screen sizes
