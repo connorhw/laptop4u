@@ -2,4 +2,14 @@
 
 js - add CPU search criterion
 
-11/13 - Trying to implement search criterian of a laptop screen sizes
+11/13 - Trying to implement search criterian of a laptop screen sizes and storage types
+
+'https://api.bestbuy.com/v1/products(manufacturer='+manuf+'&(categoryPath.id=abcat0502000)&condition=new&regularPrice<='+maxPrice+')'+
+    '?apiKey=1TGJYsFjOVTW6vG1Qsx2e2i8&sort=description.asc&show=categoryPath.id,categoryPath.name,description,details.name,features.feature,manufacturer,name,regularPrice,thumbnailImage,image&'+
+    'pageSize=25&format=json'
+
+ie..
+
+products[] > screenSizeIn
+products[] > details[] > name: "Storage Type" 
+                         value: "HDD"

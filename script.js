@@ -4,9 +4,9 @@ const apiKey = '1TGJYsFjOVTW6vG1Qsx2e2i8';
 const baseURL = 'https://api.bestbuy.com/v1/products((categoryPath.id=abcat0502000))';
 let laptopData;
 
-function getBBLaptops(manuf, maxPrice) {
+function getBBLaptops(manuf, maxPrice, storage) {
     const url = 'https://api.bestbuy.com/v1/products(manufacturer='+manuf+'&(categoryPath.id=abcat0502000)&condition=new&regularPrice<='+maxPrice+')'+
-    '?apiKey=1TGJYsFjOVTW6vG1Qsx2e2i8&sort=description.asc&show=categoryPath.id,categoryPath.name,description,details.name,features.feature,manufacturer,name,regularPrice,thumbnailImage,image&'+
+    '?apiKey=1TGJYsFjOVTW6vG1Qsx2e2i8&sort=description.asc&show=all&'+
     'pageSize=25&format=json';
     fetch(url)
         .then(response => {
@@ -22,10 +22,22 @@ function getBBLaptops(manuf, maxPrice) {
         });
 }
 
+function pickOutSSD() {
+    
+}
+
+/*
+function pickOutHDD(responseJson) {
+    for (let i=0; i<responseJson.products.length; i++) {
+        
+    }
+}
+*/
 function displayResults(responseJson) {
     console.log(laptopData);
     $('.bb-laptops-list').empty();
     for (let i=0; i<responseJson.products.length; i++) {
+        /* Validate Storage Type here */ 
         $('.bb-laptops-list').append(
             `<li class="laptop-li" node=${i}>
             <p>${responseJson.products[i].name}: $${responseJson.products[i].regularPrice}</p>
@@ -70,7 +82,8 @@ function watchForm() {
         event.preventDefault();
         const manuf = $('#js-manuf').val();
         const maxPrice =$('#js-price').val();
-        getBBLaptops(manuf, maxPrice);
+        const storage = $('js-storage').val();
+        getBBLaptops(manuf, maxPrice, storage);
     });
     
     console.log('On the lookout!');
