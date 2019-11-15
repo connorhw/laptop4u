@@ -1,12 +1,21 @@
+form {
+    background-image: linear-gradient(180deg,hsla(0,0%,100%,0) 60%,#fff),linear-gradient(70deg,#dbedff 32%,#ebfff0);
+}
+
 header {
-    border: 1px solid black;
+    
     text-align: center;
-    background: grey;
+    background: #1975ff;
+    color: white;
+}
+
+h2 {
+    background: #1975ff;
     color: white;
 }
 
 .criteria, .laptop-choice {
-    border: 1px solid black;
+    
     margin: 10px;
     text-align: center;
     height: 290px;
@@ -14,26 +23,26 @@ header {
 }
 
 .form, .your-laptop {
-    border: 1px solid black;
+    
     margin: 10px;
     text-align: center;
     height: 385px;
 }
 
 footer {
-    border: 1px solid black;
+    
     text-align: center;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background: grey;
+    background:#1975ff;
     color: white;
     margin-top: 25px;
 }
 
 .results-list {
-    border: 1px solid black;
+    
     text-align: center;
     margin: 10px;
     height: 385px;
@@ -42,7 +51,7 @@ footer {
 }
 
 .compare-list {
-    border: 1px solid black;
+    
     text-align: center;
     margin-top: 10px;
     background: grey;
@@ -50,7 +59,7 @@ footer {
 }
 
 #newegg, #bestbuy, #amazon {
-    border: 1px solid black;
+    
     text-align: center;
     margin: 5px;
     height: 80px;

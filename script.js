@@ -7,7 +7,7 @@ let laptopData;
 function getBBLaptops(manuf, maxPrice, storage) {
     const url = 'https://api.bestbuy.com/v1/products(manufacturer='+manuf+'&(categoryPath.id=abcat0502000)&condition=new&regularPrice<='+maxPrice+')'+
     '?apiKey=1TGJYsFjOVTW6vG1Qsx2e2i8&sort=description.asc&show=all&'+
-    'pageSize=25&format=json';
+    'pageSize=10&format=json';
     fetch(url)
         .then(response => {
             if (response.ok) {
@@ -18,6 +18,8 @@ function getBBLaptops(manuf, maxPrice, storage) {
         })
         .then(responseJson => {
             laptopData = responseJson;
+            /* pick storage type here */
+
             displayResults(responseJson);
         });
 }
@@ -36,12 +38,11 @@ function pickOutHDD(responseJson) {
 function displayResults(responseJson) {
     console.log(laptopData);
     $('.bb-laptops-list').empty();
-    for (let i=0; i<responseJson.products.length; i++) {
-        /* Validate Storage Type here */ 
+    for (let i=0; i<responseJson.products.length; i++) { 
         $('.bb-laptops-list').append(
             `<li class="laptop-li" node=${i}>
             <p>${responseJson.products[i].name}: $${responseJson.products[i].regularPrice}</p>
-            <button type="button" id="select-button">test next</button>
+            <button type="button" id="select-button">Choose</button>
             <img src="${responseJson.products[i].thumbnailImage}"></br>
             </li>`
         )
