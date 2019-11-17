@@ -24,17 +24,19 @@ function getBBLaptops(manuf, maxPrice, storage) {
         });
 }
 
+/* 1st attempt at filtering Storage Type... fail.
 function pickOutSSD() {
     
 }
 
-/*
+
 function pickOutHDD(responseJson) {
     for (let i=0; i<responseJson.products.length; i++) {
         
     }
 }
 */
+
 function displayResults(responseJson) {
     console.log(laptopData);
     $('.bb-laptops-list').empty();
