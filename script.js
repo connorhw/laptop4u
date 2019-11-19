@@ -17,50 +17,25 @@ function getBBLaptops(manuf, maxPrice, storage) {
             throw new Error(response.statusText);
         })
         .then(responseJson => {
-            laptopData = responseJson;
+            laptopData = responseJson.products;
             /* pick storage type here */
-
             
-            let storage = "HDD"; //hard coding in value for testing purposes
-            var newArray = responseJson.filter(item => item.products.details["Storage Type"] === storage);
+            let storage = "SDD"; //hard coding in value for testing purposes
+            var newArray = laptopData.filter(item => item.details["Storage Type"] === storage);
             
-            
-            //var newArray = responseJson.filter();
-            //displayResults(newArray);
-            
-
-            displayResults(responseJson);
+            displayResults(newArray);
         });
 }
-/*
 
-storage = "SSD"
-var newArray = responseJson.filter(responseJson.products.details["Storage Type"] = storage);
-
-*/
-
-/* 1st attempt at filtering Storage Type... fail.
-function pickOutSSD() {
-    
-}
-
-
-function pickOutHDD(responseJson) {
-    for (let i=0; i<responseJson.products.length; i++) {
-        
-    }
-}
-*/
-
-function displayResults(responseJson) {
-    console.log(laptopData);
+function displayResults(newArray) {
+    console.log(newArray);
     $('.bb-laptops-list').empty();
-    for (let i=0; i<responseJson.products.length; i++) { 
+    for (let i=0; i<laptopData.length; i++) { 
         $('.bb-laptops-list').append(
             `<li class="laptop-li" node=${i}>
-            <p>${responseJson.products[i].name}: $${responseJson.products[i].regularPrice}</p>
+            <p>${laptopData[i].name}: $${laptopData[i].regularPrice}</p>
             <button type="button" id="select-button">Choose</button>
-            <img src="${responseJson.products[i].thumbnailImage}"></br>
+            <img src="${laptopData[i].thumbnailImage}"></br>
             </li>`
         )
     };
@@ -83,12 +58,12 @@ function getSelectedLaptopInfo(index){
     $('.bb-selected-laptop').empty();
     console.log(laptopData)
     $(".bb-selected-laptop").append(
-    `<img id ="full-laptop-image" src="${laptopData.products[index].image}" alt="Full image of computer">`
+    `<img id ="full-laptop-image" src="${laptopData[index].image}" alt="Full image of computer">`
     )
-    for (let i=0; i<laptopData.products[index].features.length; i++) {
+    for (let i=0; i<laptopData[index].features.length; i++) {
         $(".bb-selected-laptop").append(
             `<li>
-                ${laptopData.products[index].features[i].feature}
+                ${laptopData[index].features[i].feature}
             </li>`
         )
     }
