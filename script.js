@@ -20,9 +20,24 @@ function getBBLaptops(manuf, maxPrice, storage) {
             laptopData = responseJson;
             /* pick storage type here */
 
+            
+            let storage = "HDD"; //hard coding in value for testing purposes
+            var newArray = responseJson.filter(item => item.products.details["Storage Type"] === storage);
+            
+            
+            //var newArray = responseJson.filter();
+            //displayResults(newArray);
+            
+
             displayResults(responseJson);
         });
 }
+/*
+
+storage = "SSD"
+var newArray = responseJson.filter(responseJson.products.details["Storage Type"] = storage);
+
+*/
 
 /* 1st attempt at filtering Storage Type... fail.
 function pickOutSSD() {
