@@ -11,13 +11,11 @@ function getBBLaptops(manuf, maxPrice, storage) {
     fetch(url)
         .then(response => {
             if (response.ok) {
-                //console.log('response is good');
                 return response.json();
             }
             throw new Error(response.statusText);
         })
         .then(responseJson => {
-            //console.log(responseJson);
             laptopData = responseJson.products;
             var newArray = laptopData.filter(item => item.details.find(x => x.name === "Storage Type").value === storage); //filters storage type
             displayResults(newArray);
@@ -48,12 +46,10 @@ function displaySelectedLaptopListener() {
         index = +index; //converts string to number
         getSelectedLaptopInfo(index);
     })
-
 }
 
 function getSelectedLaptopInfo(index){
     $('.bb-selected-laptop').empty();
-    //console.log(laptopData)
     $(".bb-selected-laptop").append(
     `<img id ="full-laptop-image" src="${laptopData[index].image}" alt="Full image of computer">`
     )
@@ -74,10 +70,8 @@ function watchForm() {
         const storage = $('#js-storage').val();
         getBBLaptops(manuf, maxPrice, storage);
     });
-    //console.log('On the lookout!');
 }
 
 $(function() {
-    //console.log('App loaded successfully!');
     watchForm();
 });
