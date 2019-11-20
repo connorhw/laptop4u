@@ -10,8 +10,12 @@ header {
 }
 
 h2 {
+    text-align: center;
     background: #1975ff;
     color: white;
+    font-size: 18px;
+    
+    
 }
 
 .criteria, .laptop-choice {
@@ -65,6 +69,10 @@ footer {
     height: 80px;
     background: grey;
     color: white;
+}
+
+label {
+    font-size: 14px;
 }
 
 /*====KEEPING-UNDER=======================================================*/
