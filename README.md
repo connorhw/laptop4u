@@ -1,9 +1,9 @@
-App: Laptop4U
+# App: Laptop4U
 
-Summary:
+## Summary:
 
-Live App: https://connorhw.github.io/laptop4u/
+## Live App: https://connorhw.github.io/laptop4u/
 
-Screenshots:
+## Screenshots:
 
-Technologies: HTML/CSS/JavaScript/jQuery
+### Technologies: HTML/CSS/JavaScript/jQuery
