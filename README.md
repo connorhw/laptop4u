@@ -5,6 +5,6 @@
 
 ## Live App: https://connorhw.github.io/laptop4u/
 
-## Screenshots: ![](images1/search-criteria.png)
+## Screenshots: ![](images1/search-criteria-small.png)
 
 ### Technologies: HTML/CSS/JavaScript/jQuery
