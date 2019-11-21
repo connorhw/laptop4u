@@ -6,8 +6,13 @@
 ## Live App: https://connorhw.github.io/laptop4u/
 
 ## Screenshots:
-<img src="images1/search-criteria.png" width='300'> test123
-<img src="images1/search-results.png" width='300'> test456
-<img src="images1/laptop-info.png" width='300'> test789
+Page 1 - Input your laptop criteria
+<img src="images1/search-criteria.png" width='300'>
+
+Page 2 - See the search results
+<img src="images1/search-results.png" width='300'> 
+
+Page 3 - See details of your laptop
+<img src="images1/laptop-info.png" width='300'> 
 
 ### Technologies: HTML/CSS/JavaScript/jQuery
