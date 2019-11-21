@@ -1,7 +1,7 @@
 # App: Laptop4U
 
 ## Summary: 
-    You want a laptop but don't know where to start looking? Use this applicaiton to start your search. 
+    You want a laptop but don't know where to start looking? Use this applicaiton to start your search. This app takes into account, arguably the three most important aspects of a personal computer. Simple and straight to the point.
 
 ## Live App: https://connorhw.github.io/laptop4u/
 
