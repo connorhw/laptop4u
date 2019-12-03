@@ -13,3 +13,5 @@ ie..
 products[] > screenSizeIn
 products[] > details[] > name: "Storage Type" 
                          value: "HDD"
+
+            

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>L4U</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,22 +12,25 @@
     </header>
     <div class="main">
         <form class="form">
-            <h2>Tell me what you're looking for:</h2>
+            <h2>Tell me what you're looking for...</h2>
             <section class="criteria">
-                <label for="js-manuf">Brand</label></br>
+                <h3>Just fill out 3 things for me:</h3>
+                <label for="js-manuf">Brand</label><br />
                 <select id="js-manuf" required>
+                    <option value="">select</option>
                     <option value="HP">HP</option>
                     <option value="Apple">Apple</option>
                     <option value="ASUS">ASUS</option>
-                </select></br></br>
-                <label for="js-storage">Storage Type</label></br>
+                </select><br /><br />
+                <label for="js-storage">Storage Type</label><br />
                 <select id="js-storage" required>
+                    <option value="">select</option>
                     <option value="HDD">Hard Disk Drive</option>
                     <option value="SSD">Solid State Drive</option>
-                </select></br></br>
-                <label for="js-price">Max Price</label></br>
-                <input type="number" id="js-price" required></br>
-                <button type="submit" >Search</button></br>
+                </select><br /><br />
+                <label for="js-price">Max Price</label><br />
+                <input type="number" id="js-price" placeholder="highest price?" min="1" required><br />
+                <button type="submit" >Search</button><br />
             </section>
         </form>
         <section class="results hidden">
@@ -43,7 +46,8 @@
     </div>
 </body>
 <footer>
-    <h2>v1</h2>
+    <h2>Contact Information:</h2>
+    <a href="mailto:connorwong93@gmail.com">Let Me Know</a><br />
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>  
 <script src="script.js"></script>

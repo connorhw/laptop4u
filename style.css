@@ -16,6 +16,7 @@ h2 {
     font-size: 18px;
     
     
+    
 }
 
 .criteria, .laptop-choice {
@@ -43,6 +44,11 @@ footer {
     background:#1975ff;
     color: white;
     margin-top: 25px;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
 }
 
 .results-list {
@@ -75,6 +81,14 @@ label {
     font-size: 14px;
 }
 
+select {
+    text-align: center;
+}
+
+input {
+    text-align: center;
+}
+
 /*====KEEPING-UNDER=======================================================*/
 
 * {
@@ -89,18 +103,21 @@ li {
     list-style: none;
     margin-right: 15px;
     background: white;
+    padding: 8px;
 
 }
 
 li:nth-child(odd) {
     background:beige;
+    padding: 8px;
+
 }
 
 #buffer {
     height: 75px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 800px) {
     .main {
         font-size: 13px;
     }
@@ -111,7 +128,7 @@ li:nth-child(odd) {
     }
 
     .selected {
-        margin-bottom: 80px;
+        margin-bottom: 150px;
     }
 
 }
