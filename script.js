@@ -1,7 +1,7 @@
 'use strict';
 
-const apiKey = '1TGJYsFjOVTW6vG1Qsx2e2i8';
-const baseURL = 'https://api.bestbuy.com/v1/products((categoryPath.id=abcat0502000))';
+//const apiKey = '1TGJYsFjOVTW6vG1Qsx2e2i8';
+//const baseURL = 'https://api.bestbuy.com/v1/products((categoryPath.id=abcat0502000))';
 let laptopData;
 
 function getBBLaptops(manuf, maxPrice, storage) {
@@ -17,7 +17,14 @@ function getBBLaptops(manuf, maxPrice, storage) {
         })
         .then(responseJson => {
             laptopData = responseJson.products;
-            var newArray = laptopData.filter(item => item.details.find(x => x.name === "Storage Type").value === storage); //filters storage type
+            var newArray = laptopData.filter(item => { 
+                let myItem = item.details.find(x => {
+                    //console.log(x.name);
+                      return x.name === "Storage Type" 
+                       })
+                //return myItem.value === storage
+                return myItem && myItem.value === storage
+                });//filters storage type
             displayResults(newArray);
         });
 }
@@ -59,8 +66,49 @@ function getSelectedLaptopInfo(index){
                 ${laptopData[index].features[i].feature}
             </li>`
         )
+    } 
+    //start of 2nd API request
+
+    const apiKey = 'AIzaSyDKeYmRQHA0Z1oGKjC01kQhrqB3Zg6k48Y'; 
+    const searchURL = 'https://www.googleapis.com/youtube/v3/search';
+    const query = laptopData[index].modelNumber;
+    console.log(query);
+
+    
+    function formatQueryParams(params) {
+        const queryItems = Object.keys(params)
+        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+        return queryItems.join('&');
     }
-}
+
+
+    function getYouTubeVideos(query, maxResults) {
+    const params = {
+        key: apiKey,
+        q: query,
+        part: 'snippet',
+        maxResults
+    };
+    const queryString = formatQueryParams(params)
+    const url = searchURL + '?' + queryString;
+
+    fetch(url)
+        .then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+        throw new Error(response.statusText);
+        })
+        .then(responseJson => console.log(JSON.stringify(responseJson)))
+        .catch(err => {
+        $('#js-error-message').text(`Something went wrong: ${err.message}`);
+        });
+    }
+    let maxResults = 1;
+    getYouTubeVideos(query, maxResults)
+    
+} 
+//end of Second API request
 
 function watchForm() {
     $('.form').submit(function(event) {
