@@ -69,7 +69,7 @@ function getSelectedLaptopInfo(index){
     } 
     //start of 2nd API request
 
-    const apiKey = 'AIzaSyDKeYmRQHA0Z1oGKjC01kQhrqB3Zg6k48Y'; 
+    const apiKey = 'AIzaSyDFqlW_ceO8-lJmkHtM7SspmiY19gZm9sU'; 
     const searchURL = 'https://www.googleapis.com/youtube/v3/search';
     const query = laptopData[index].modelNumber;
     console.log(query);
@@ -83,6 +83,7 @@ function getSelectedLaptopInfo(index){
 
 
     function getYouTubeVideos(query, maxResults) {
+        console.log(query);
     const params = {
         key: apiKey,
         q: query,
