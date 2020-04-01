@@ -1,7 +1,5 @@
 'use strict';
 
-//const apiKey = '1TGJYsFjOVTW6vG1Qsx2e2i8';
-//const baseURL = 'https://api.bestbuy.com/v1/products((categoryPath.id=abcat0502000))';
 let laptopData;
 
 function getBBLaptops(manuf, maxPrice, storage) {
@@ -19,10 +17,8 @@ function getBBLaptops(manuf, maxPrice, storage) {
             laptopData = responseJson.products;
             var newArray = laptopData.filter(item => { 
                 let myItem = item.details.find(x => {
-                    //console.log(x.name);
                       return x.name === "Storage Type" 
                        })
-                //return myItem.value === storage
                 return myItem && myItem.value === storage
                 });//filters storage type
             displayResults(newArray);
@@ -72,15 +68,12 @@ function getSelectedLaptopInfo(index){
     const apiKey = 'AIzaSyDFqlW_ceO8-lJmkHtM7SspmiY19gZm9sU'; 
     const searchURL = 'https://www.googleapis.com/youtube/v3/search';
     const query = laptopData[index].modelNumber;
-    console.log(query);
-
     
     function formatQueryParams(params) {
         const queryItems = Object.keys(params)
         .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
         return queryItems.join('&');
     }
-
 
     function getYouTubeVideos(query, maxResults) {
         console.log(query);
@@ -102,9 +95,7 @@ function getSelectedLaptopInfo(index){
         throw new Error(response.statusText);
         })
         .then(responseJson => {
-            //console.log(responseJson.items[0].id.videoId)
             var vidId = responseJson.items[0].id.videoId;
-            console.log(vidId);
             console.log("//www.youtube.com/embed/${vidId}")
             $('.youtube-vid').empty();
             $('.youtube-vid').append(`
