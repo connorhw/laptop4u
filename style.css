@@ -132,3 +132,7 @@ li:nth-child(odd) {
     }
 
 }
+
+div.youtube-vid {
+    text-align: center;
+}

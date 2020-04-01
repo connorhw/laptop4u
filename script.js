@@ -88,6 +88,7 @@ function getSelectedLaptopInfo(index){
         key: apiKey,
         q: query,
         part: 'snippet',
+        type: 'video',
         maxResults
     };
     const queryString = formatQueryParams(params)
@@ -100,7 +101,16 @@ function getSelectedLaptopInfo(index){
         }
         throw new Error(response.statusText);
         })
-        .then(responseJson => console.log(JSON.stringify(responseJson)))
+        .then(responseJson => {
+            //console.log(responseJson.items[0].id.videoId)
+            var vidId = responseJson.items[0].id.videoId;
+            console.log(vidId);
+            console.log("//www.youtube.com/embed/${vidId}")
+            $('.youtube-vid').empty();
+            $('.youtube-vid').append(`
+            <iframe src="https://www.youtube.com/embed/${vidId}" height="200" width="300"></iframe>
+            `) 
+        })
         .catch(err => {
         $('#js-error-message').text(`Something went wrong: ${err.message}`);
         });
