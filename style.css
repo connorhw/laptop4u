@@ -3,7 +3,6 @@ form {
 }
 
 header {
-    
     text-align: center;
     background: #1975ff;
     color: white;
@@ -14,13 +13,9 @@ h2 {
     background: #1975ff;
     color: white;
     font-size: 18px;
-    
-    
-    
 }
 
 .criteria, .laptop-choice {
-    
     margin: 10px;
     text-align: center;
     height: 290px;
@@ -28,14 +23,12 @@ h2 {
 }
 
 .form, .your-laptop {
-    
     margin: 10px;
     text-align: center;
     height: 385px;
 }
 
 footer {
-    
     text-align: center;
     position: fixed;
     left: 0;
@@ -52,16 +45,14 @@ a {
 }
 
 .results-list {
-    
     text-align: center;
     margin: 10px;
-    height: 385px;
+    height: 585px;
     background: grey;
     color: white;
 }
 
 .compare-list {
-    
     text-align: center;
     margin-top: 10px;
     background: grey;
@@ -69,7 +60,6 @@ a {
 }
 
 #newegg, #bestbuy, #amazon {
-    
     text-align: center;
     margin: 5px;
     height: 80px;
@@ -89,6 +79,10 @@ input {
     text-align: center;
 }
 
+div.youtube-vid {
+    height: 300px;
+}
+
 /*====KEEPING-UNDER=======================================================*/
 
 * {
@@ -104,13 +98,11 @@ li {
     margin-right: 15px;
     background: white;
     padding: 8px;
-
 }
 
 li:nth-child(odd) {
     background:beige;
     padding: 8px;
-
 }
 
 #buffer {
