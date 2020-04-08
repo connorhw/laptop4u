@@ -26,7 +26,6 @@ function getBBLaptops(manuf, maxPrice, storage) {
 }
 
 function displayResults(newArray) {
-    console.log(newArray);
     $('.bb-laptops-list').empty();
     for (let i=0; i<newArray.length; i++) { 
         $('.bb-laptops-list').append(
@@ -76,7 +75,6 @@ function getSelectedLaptopInfo(index){
     }
 
     function getYouTubeVideos(query, maxResults) {
-        console.log(query);
     const params = {
         key: apiKey,
         q: query,
@@ -96,7 +94,6 @@ function getSelectedLaptopInfo(index){
         })
         .then(responseJson => {
             var vidId = responseJson.items[0].id.videoId;
-            console.log("//www.youtube.com/embed/${vidId}")
             $('.youtube-vid').empty();
             $('.youtube-vid').append(`
             <iframe src="https://www.youtube.com/embed/${vidId}" height="200" width="300"></iframe>
